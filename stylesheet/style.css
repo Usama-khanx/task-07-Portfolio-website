@@ -115,7 +115,7 @@ header{
 .servicesSection span{
     color: red;
 }
-/* 
+
 /* card */
 
 .servicesCardsparent{
@@ -163,7 +163,9 @@ header{
     }
 } */
 
-/* RECENT PROJECTSSECTION  */
+
+
+/* RECENT PROJECTS SECTION  */
 
 .recentProject{
     box-shadow: 0 0 4px 4px white;
@@ -226,7 +228,7 @@ header{
 
 
 
-
+/* 
 /* ABOUT ME */
 
 .aboutMeSection{
