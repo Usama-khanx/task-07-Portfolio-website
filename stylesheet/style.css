@@ -7,24 +7,30 @@
 }
 
 
-header{
-   
-    background-image: url("../assests/images/bodybackgroundimage.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: left bottom;
-    /* width: 100vw;
-    height: 100vh; */
+#hamburger{
+  
+    width: 25px;
+    display: none;
 }
+#cancel{
+   
+    width: 25px;
+    display: none;
+}
+   
+    
+    
 
 .navigationMenu{
     display: flex;
     justify-content: space-between;
-    padding: 55px 22px;
+    padding: 22px 12px;
     position: sticky;
     top: 0;
+    z-index: 5;
     color: #ffffff;
+
+    background-color: rgb(73, 43, 43);
    
     
 }
@@ -53,20 +59,99 @@ header{
       color: rgb(232, 151, 151);
 }
 
+@media only screen and (max-width:860px) {
+    .navagationItems{
+        /* flex-direction: column; */
+        margin-top: 7%;
+    }
+
+    .navigationMenu{
+      flex-direction: column;
+    
+      align-items: center;
+    }
+}
+
+@media only screen and (max-width:660px) {
+    .navagationItems{
+        flex-direction: column;
+        margin-top: 7%;
+       
+        display: none;
+    }
+
+
+    #hamburger{
+        display: block;
+        
+     margin-left: 96%;
+
+    }
+
+    #cancel{
+    
+        
+        margin-left: 96%;
+    }
+
+   
+}
+
 
 /* HOME SECTION */
 
 .homeSection{
     font-size:xx-large;
     padding: 26px 26px;
-    margin: 10px 12px;
+    /* margin: 10px 12px; */
+    height: 100vh;
+   
+    background-image: url("../assests/images/bodybackgroundimage.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left bottom;
+
+    position: relative;
+    z-index: 2;
+   
+   
 }
+
 
 .homeSection h1{
     font-weight: bolder;
     color:white;
     margin: 15px 12px;
     transition: all .3s;
+
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    
+   
+
+    animation-name: homeheading;
+    animation-duration: 4s;
+  
+    animation-timing-function: ease-in;
+  
+}
+@keyframes homeheading{
+
+    0%{
+        
+       
+        color: rgba(36, 22, 22, 0.363);
+    }
+    15%{
+        position: relative;
+       
+        color: rgba(97, 75, 75, 0.363);
+    }
+   
+    100%{
+      
+        color: rgb(149, 15, 226);
+    }
 }
 .homeSection h1 span{
     color: red;
@@ -98,18 +183,21 @@ header{
 .servicesSection{
     background-color: white;
     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 36px 0;
-    text-align: center;
-    padding-top: 16px;
+  
 }
 
 .servicesSection h1{
     font-size: xx-large;
     font-family: Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 2px;
+    text-shadow: 2px 2px 3px rgb(41, 36, 36);
 }
 .servicesSection > p {
-    margin: 16px;
+    text-shadow: 0 0 1px rgb(204, 186, 186);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .servicesSection span{
@@ -122,46 +210,49 @@ header{
   
     display: flex;
     gap: 25px;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     padding: 16px 16px;
-    
+   
+    justify-content: center;
+    /* background-color: rgba(144, 199, 201, 0.61); */
     box-shadow: inset 1px 1px 4px rgb(223, 217, 217);
 }
 
 .serviceCard{
    
     /* background-image: url("../assests/images/serviceCardBackground.jpg"); */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     /* background-size: contain; */
     /* background-attachment: fixed; */
     /* background-position: top top; */
     /* background: linear-gradient(rgba(126, 95, 95, 0.806), rgba(121, 110, 110, 0.607)); */
-   
+   background-color: #0b699340;
     padding: 16px 16px;
-    margin-left: auto;
-    flex-basis: 22%;
+    flex-basis: 20%;
+    text-align: center;
     box-shadow: 1px 1px 3px 3px rgb(168, 163, 163);
+
+    transition: all .8s;
+}
+
+@media only screen and (max-width:560px){
+    .servicesCardsparent{
+
+flex-direction: column;
+    }
+}
+
+.serviceCard:hover{
+    transform:translateY(-12px);
+    background-color: #05202072;
 }
 .serviceCard img{
-    height: 150px;
+    height: 100px;
 }
 .serviceCard > h2,p{
     font-family:'Times New Roman', Times, serif;
     padding: 14px 8px;
 }
-
-/* @media(max-width:760px){
-    .servicesCardsparent{
-        
-        flex-direction: column;
-    }
-    .serviceCard{
-        width: 100%;
-    }
-    .serviceCard p{
-        width: 40%;
-    }
-} */
 
 
 
@@ -227,7 +318,18 @@ header{
 }
 
 
+@media only screen and (max-width:560px){
+    .projectPart{
+     
+     display: flex;
+     flex-direction: column;
+    }
+    .projectContent{
+        text-align: center;
+    }
 
+  
+}
 
 /* ABOUT ME */
 
@@ -239,18 +341,13 @@ header{
     gap: 16px;
 }
 
-.imagaSeyPehlayDev{
-    /* border: 3px solid red;
-     */
-     border-bottom: 6px solid red;
-     border-left: 6px solid red;
-    width: 60%;
-}
+
 .aboutMeSection img{
-    width: 90%;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
     padding: 4px 4px;
-     transform: translate(50px, -30px);
+     /* transform: translate(50px, -30px); */
 }
 
 
