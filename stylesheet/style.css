@@ -21,7 +21,7 @@
     top: 0;
     z-index: 5;
     color: #ffffff;
-    /* background-color: rgb(73, 43, 43);  */
+
     background-color: rgba(37, 31, 31, 0.925);
 }
 .navigationMenu h2 span{
@@ -86,23 +86,36 @@
 /* HOME SECTION */
 
 .homeSection{
-    font-size:xx-large;
-    padding: 26px 26px;
+     font-size:xx-large;
+    padding: 26px 26px; 
     /* margin: 10px 12px; */
     height: 100vh;
    
-    background-image: url("../assests/images/bodybackgroundimage.jpg");
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: left bottom;
-
+   
+    
     position: relative;
+    
     z-index: 2;
-   
-   
+    
+    
 }
 
+.homeSection::before{
+    content: '';
+    background: rgba(2, 25, 36, 0.728)url('../assests/images/bodybackgroundimage.jpg');
+     /* background-repeat: no-repeat; */
+     background-size: cover;
+     background-attachment: fixed;
+     background-position: left bottom;
+  
+     position: absolute;
+     z-index: -1;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     opacity: 0.71;
+}
 
 .homeSection h1{
     font-weight: bolder;
@@ -444,32 +457,38 @@ margin-right: auto; */
  }
 
 
-
-
- @media only screen and (min-width: 404px) and (max-width:700px){
+ @media only screen and (max-width:762px){
     .contactCards{
         flex-direction: column;
-        height: 100vh;
+       
+       justify-content: center;
+     
         
     }
     .crd{
-        width: 400px;
+        width:400px;
        margin: 12px auto;
       
+    }
+ }
+
+ @media only screen and (max-width: 404px) {
+    .contactCards{
+        flex-direction: column;
+        padding: 0;
+    }
+    .crd{
+        width: 400px;
     }
  }
 
  @media only screen and (max-width: 403px){
     .contactCards{
         flex-direction: column;
-        height: 100vh;
-        
-        
+       padding: 0;
     }
     .crd{
-        width: 100%;
-       margin: 2px auto;
-      
+        width: 100%;  
     }
  }
 
